@@ -1,0 +1,27 @@
+# Laptop-scale proof-of-concept run (matches src/pipeline.py defaults).
+segment_id: 20230827161847   # Scroll 1, known ink-labeled demo segment
+scroll: "1"
+energy: "54"
+resolution: "7.91um"
+
+crop:
+  y0: 2000
+  y1: 3500
+  x0: 2500
+  x1: 4000
+  z_center: 32   # recto surface layer
+  z_depth: 16
+
+tiling:
+  tile_size: 256
+  stride: 128
+
+train:
+  batch_size: 4
+  epochs: 30
+  base_width: 24   # U-Net channel width; laptop-memory friendly
+  lr: 1.0e-4
+
+# For a cloud GPU run: bump base_width to 64, tile_size to 512, epochs to
+# 200-1000 (matches the official notebook default of 1000 w/ early stop),
+# and crop the full segment instead of one dense window.

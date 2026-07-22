@@ -1,0 +1,12 @@
+vesuvius
+nest_asyncio
+torch
+numpy
+pillow
+zarr==2.18.7
+fsspec
+aiohttp
+requests
+tqdm
+matplotlib
+scikit-image
